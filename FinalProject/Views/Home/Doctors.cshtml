@@ -1,0 +1,49 @@
+﻿@using FinalProject.Models
+
+@{
+    ViewBag.Title = "Doctors";
+}
+
+<container class="me-auto">
+    <p>@Html.ActionLink("Create New", "CreateDoctor")</p>
+</container>
+<div class="border border-info">
+    <form asp-controller="Home" asp-action="Doctors" method="post">
+        <input type="search" name="dname" placeholder="Doctor's Name" />
+        <br />
+        <input type="search" name="phone" placeholder="Telephone Number" />
+        <br />
+        <br />
+        <input type="submit" value="Search" />
+    </form>
+</div>
+<hr />
+@Html.ActionLink("Export Doctors", "ExportDoctors", null, new { @class = "btn  btn-primary" })
+<form asp-controller="Home" asp-action="Doctors" method="post">
+    <input type="submit" value="View All" />
+</form>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Office</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Telephone</th>
+            <th scope="col">Address</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Doctor doc in Model)
+        {
+            <tr>
+                <td>@doc.Name</td>
+                <td>@doc.Office</td>
+                <td>@doc.Email</td>
+                <td>@doc.Telephone</td>
+                <td>@doc.Address</td>
+                <td>@Html.ActionLink("Edit", "EditDoctor", new { id = doc.Id }) | <a href="/Home/DoctorDetails/@doc.Id">Details</a> | @Html.ActionLink("Delete", "DeleteDoctor", new { id = doc.Id })</td>
+            </tr>
+        }
+    </tbody>
+</table>

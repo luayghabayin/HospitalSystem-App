@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - CPAN 253 Final Project</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-fixed-top navbar-expand">
+        <div class="container">
+            <div class="navbar-header">
+                <p class="navbar-brand">@ViewBag.Title</p>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Doctors", "Doctors", "Home")</li>
+                    <li>@Html.ActionLink("Patients", "Patients", "Home")</li>
+                    <li>@Html.ActionLink("Visits", "Visits", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <image src="~/Pictures/logo.svg" width="200" height="200"></image>
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>Luay Ghabayin</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

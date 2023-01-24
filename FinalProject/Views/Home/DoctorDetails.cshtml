@@ -1,0 +1,34 @@
+﻿@model FinalProject.Models.Doctor
+
+@{
+    ViewBag.Title = "Doctors Detail";
+}
+<h2>Details</h2>
+<h4>Doctor</h4>
+<table class="table table-hover">
+    <tbody>
+        <tr>
+            <td scope="row">Name</td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td scope="row">Office</td>
+            <td>@Model.Office</td>
+        </tr>
+        <tr>
+            <td scope="row">E-Mail</td>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <td scope="row">Telephone</td>
+            <td>@Model.Telephone</td>
+        </tr>
+        <tr>
+            <td scope="row">Address</td>
+            <td>@Model.Address </td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    @Html.ActionLink("Back to List", "Doctors") | @Html.ActionLink("Edit", "EditDoctor", new { id = Model.Id })
+</div>

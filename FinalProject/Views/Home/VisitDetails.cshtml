@@ -1,0 +1,35 @@
+﻿@model FinalProject.Models.Visit
+
+@{
+    ViewBag.Title = "Visit Details";
+}
+<h2>Details</h2>
+<h4>Patient</h4>
+<table class="table table-hover">
+    <tbody>
+        <tr>
+            <td scope="row">Date of Admission</td>
+            <td>@Model.DateOfAdmission</td>
+        </tr>
+        <tr>
+            <td scope="row">Date of Discharge</td>
+            <td>@Model.DateOfDischarge</td>
+        </tr>
+        <tr>
+            <td scope="row">Complaint</td>
+            <td>@Model.Complaint</td>
+        </tr>
+        <tr>
+            <td scope="row">Doctor</td>
+            <td>@Model.Doctor.Name </td>
+        </tr>
+        <tr>
+            <td scope="row">Patient</td>
+            <td>@Model.Patient.Name</td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    @Html.ActionLink("Back to List", "Visits") | @Html.ActionLink("Edit", "EditVisit", new { id = Model.Id })
+</div>
+

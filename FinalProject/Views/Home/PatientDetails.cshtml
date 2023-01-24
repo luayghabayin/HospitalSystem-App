@@ -1,0 +1,38 @@
+﻿@model FinalProject.Models.Patient
+
+@{
+    ViewBag.Title = "Patients Details";
+}
+<h2>Details</h2>
+<h4>Patient</h4>
+<table class="table table-hover">
+    <tbody>
+        <tr>
+            <td scope="row">Name</td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td scope="row">E-Mail</td>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <td scope="row">Address</td>
+            <td>@Model.Address </td>
+        </tr>
+        <tr>
+            <td scope="row">Telephone</td>
+            <td>@Model.Telephone</td>
+        </tr>
+        <tr>
+            <td scope="row">Date of Birth</td>
+            <td>@Model.DateOfBirth</td>
+        </tr>
+        <tr>
+            <td scope="row">Doctor's Name</td>
+            <td>@Model.Doctor.Name</td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    @Html.ActionLink("Back to List", "Patients") | @Html.ActionLink("Edit", "EditPatient", new { id = Model.Id })
+</div>
